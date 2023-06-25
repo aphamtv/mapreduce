@@ -1,0 +1,28 @@
+-- assuming we have a table named minipurchase
+
+--q1
+SELECT category, SUM(sales) AS total_sales
+FROM minipurchase
+GROUP BY category;
+
+--q2
+SELECT category, COUNT(*) AS purchase_count
+FROM minipurchase
+GROUP BY category;
+
+--q4
+SELECT category, SUM(sales) AS total_sales
+FROM minipurchases
+WHERE category IN ('Computers', 'Cameras', 'Video Games')
+GROUP BY category;
+
+--q5
+SELECT category, COUNT(*) AS purchase_count
+FROM minipurchases
+GROUP BY category
+HAVING COUNT(*) > 114;
+
+--q6
+SELECT category, AVG(sales) AS average_sales
+FROM minipurchases
+GROUP BY category;
